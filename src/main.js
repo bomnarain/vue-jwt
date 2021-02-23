@@ -1,0 +1,37 @@
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import VeeValidate from 'vee-validate';
+import { Validator } from 'vee-validate';
+import KoreanValidate from 'vee-validate/dist/locale/ko'
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import {
+  faHome,
+  faUser,
+  faUserPlus,
+  faSignInAlt,
+  faSignOutAlt
+} from '@fortawesome/free-solid-svg-icons';
+
+
+library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
+
+Vue.config.productionTip = false;
+
+// 한글 세팅
+Validator.localize('ko', KoreanValidate)
+Vue.use(VeeValidate, { locale: KoreanValidate });
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
