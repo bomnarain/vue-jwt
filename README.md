@@ -1,4 +1,5 @@
 # vue-jwt
+- vue.js로 jwt로그인 구현 샘플 페이지입니다.
 
 ## Project setup
 ```
